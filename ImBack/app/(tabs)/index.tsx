@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import LoginScreen from '../../src/screens/LoginScreen';
 import { StyleSheet, ScrollView, View, Text, TextInput } from 'react-native';
 
 const HomeScreen = () => {
@@ -6,16 +7,9 @@ const HomeScreen = () => {
   const [text, setText] = useState('Hello World');
 
   return (
-    <ScrollView style={styles.scrollView} contentContainerStyle={styles.container}>
-      <View style={styles.viewText}>
-        <Text style={styles.text}>Hello World</Text>
-        <TextInput 
-          style={styles.textInput}
-          value={text}
-          onChangeText={setText}
-        />
-      </View>
-    </ScrollView>
+    <>
+      <LoginScreen />
+    </>
   );
 }
 
