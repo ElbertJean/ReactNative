@@ -1,4 +1,3 @@
-import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import {
     StyleSheet,
@@ -15,7 +14,6 @@ import Button from '../../components/Button/Button.component';
 
 import LogoNerd from '../../assets/LogoNerd.png';
 import AppTeste from '../../assets/bertApp.png';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const LoginScreen = () => {
 

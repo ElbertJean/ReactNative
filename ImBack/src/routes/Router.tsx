@@ -15,11 +15,7 @@ const Router = () => {
         <Stack.Screen 
           component={LoginScreen} 
           name="Home" 
-          options={{ headerShown: false,
-            headerStyle: {
-              backgroundColor: '#2C9050',
-            },
-           }} 
+          options={{ headerShown: false }} 
         />
         <Stack.Screen 
           component={ForgotPassword} 
