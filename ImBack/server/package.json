@@ -1,0 +1,20 @@
+{
+  "name": "my-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ts-node server.ts"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "sequelize": "^6.6.5",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  }
+}

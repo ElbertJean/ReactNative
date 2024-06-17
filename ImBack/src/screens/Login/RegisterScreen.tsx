@@ -7,7 +7,7 @@ import {
     Image,
     Animated,
 } from 'react-native';
-
+import axios from 'axios';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 import InputText from '../../components/InputText/InputText.component';
@@ -16,11 +16,14 @@ import Button from '../../components/Button/Button.component';
 import LogoNerd from '../../assets/LogoNerd.png';
 import RegisterImage from '../../assets/registerImage.png';
 
-const LoginScreen = () => {
-
+const RegisterScreen = () => {
     const navigation: any = useNavigation();
 
     const [offSet] = useState(new Animated.ValueXY({ x: 0, y: 100 }));
+    
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
     useEffect(() => {
         Animated.spring(offSet.y, {
@@ -28,6 +31,19 @@ const LoginScreen = () => {
             useNativeDriver: true,
         }).start();
     }, []);
+
+    const handleRegister = async () => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/users/register', {
+                nome,
+                email,
+                senha
+            });
+            console.log(response.data.message);
+        } catch (error) {
+            console.error('Erro ao registrar usuário:', error);
+        }
+    };
 
     return (
         <View style={styles.viewContainer}>
@@ -44,10 +60,10 @@ const LoginScreen = () => {
                         ]
                     }
                 ]}>
-                <InputText placeholder='Digite o seu nome' onChange={(e) => console.log('nome', e)} />
-                <InputText placeholder='Digite o seu e-mail' onChange={(e) => console.log('email', e)} />
-                <InputText placeholder='Digite a sua senha' secureTextEntry onChange={(e) => console.log('senha', e)} />
-                <Button label='Entrar'/>
+                <InputText placeholder='Digite o seu nome' onChange={(text) => setNome(text)} />
+                <InputText placeholder='Digite o seu e-mail' onChange={(text) => setEmail(text)} />
+                <InputText placeholder='Digite a sua senha' secureTextEntry onChange={(text) => setSenha(text)} />
+                <Button label='Registrar' onPress={handleRegister} />
             </Animated.View>
             <View style={styles.viewFooter}>
                 <Text style={styles.textFooter} onPress={() => navigation.navigate('Home')}>
@@ -102,4 +118,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginScreen;
+export default RegisterScreen;
