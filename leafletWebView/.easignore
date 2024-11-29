@@ -1,0 +1,16 @@
+# Ignorar arquivos de cache e logs
+node_modules/
+*.log
+.cache/
+dist/
+
+# Ignorar arquivos de build locais
+build/
+android/
+ios/
+
+# Ignorar arquivos de configuração local
+*.env.local
+*.key
+*.keystore
+.secret/

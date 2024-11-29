@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "LetfletWebView",
-    "slug": "LetfletWebView",
+    "name": "reactNativeMaps",
+    "slug": "reactNativeMaps",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -12,11 +12,14 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.elbertjean.LetfletWebView"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -33,18 +36,16 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permissão para acessar sua localização."
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "968379b5-d924-432b-a806-e4743b3495f4"
-      }
     }
   }
 }

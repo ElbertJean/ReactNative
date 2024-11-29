@@ -22,7 +22,7 @@ const App = () => {
             <script>
             const map = L.map('map', {
                 scrollWheelZoom: true
-            }).setView([-23.129096216749616, -45.82651434998431], 13);  // Coordenadas iniciais
+            }).setView([-23.129096216749616, -45.82651434998431], 13);
 
             L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
                 maxZoom: 19,
@@ -52,7 +52,8 @@ const App = () => {
                     polyline: false,
                     rectangle: false,
                     circle: false,
-                    marker: false
+                    marker: false,
+                    circleMarker: false
                 }
             });
             map.addControl(drawControl);
